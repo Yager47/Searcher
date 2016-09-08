@@ -1,8 +1,8 @@
-class Book < ActiveRecord::Base
+class Movie < ActiveRecord::Base
 
-  def self.search(title, weight, price)
+  def self.search(title, runtime, price)
     (title.present? ? where("lower(title) LIKE ?", "%#{title.downcase}%") : all) &
-    (weight.present? ? where("weight = ?", weight) : all) &
+    (runtime.present? ? where("runtime = ?", runtime) : all) &
     (price.present? ? where("price = ?", price) : all)
   end
 end
