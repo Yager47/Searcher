@@ -1,0 +1,92 @@
+<div class="row jumbotron">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <h1 class="text-center">Searcher</h1>
+    
+    <div class="col-md-offset-2">
+      <%= form_tag home_index_path, :method => 'get' do %>
+        <%= text_field_tag :title,  params[:title],  :class => "form-control", :placeholder => "Title" %>
+        <%= text_field_tag :value,  params[:value],  :class => "form-control", :placeholder => "Weight (runtime)" %>
+        <%= text_field_tag :price,  params[:price],  :class => "form-control", :placeholder => "Price" %>
+        <%= submit_tag "Find", :class => "btn btn-default" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+
+
+<div class="row" style="background-color:#F8F8FF;">
+  <div class="center-block" style="width:600px;">
+    <h3 class="text-center">Search results</h3>
+
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#books">Books</a></li>
+      <li><a data-toggle="tab" href="#movies">Movies</a></li>
+      <li><a data-toggle="tab" href="#foods">Foods</a></li>
+      <li><a data-toggle="tab" href="#appliances">Appliances</a></li>
+    </ul>
+    
+    <ul class="list-group">
+      <div class="tab-content">
+        
+        <div id="books" class="tab-pane fade in active">
+          <% unless @books.blank? %>
+            <% @books.each do |book| %>
+              <li class="list-group-item">
+                "<%= book.title %>" 
+                <small class="text-right">by <%= book.author %></small>
+                <span class="badge"><%= number_to_currency book.price %></span>
+              </li>
+            <% end %>
+          <% else %>
+            <h4>No results</h4>
+          <% end %>
+        </div>
+
+        <div id="movies" class="tab-pane fade">
+          <% unless @movies.blank? %>
+            <% @movies.each do |movie| %>
+              <li class="list-group-item">
+                "<%= movie.title %>"  
+                <small class="text-right"><%= movie.runtime %> min</small>
+                <span class="badge"><%= number_to_currency movie.price %></span>
+              </li>
+            <% end %>
+          <% else %>
+            <h4>No results</h4>
+          <% end %>
+        </div>
+      
+        <div id="foods" class="tab-pane fade">
+          <% unless @foods.blank? %>
+            <% @foods.each do |food| %>
+              <li class="list-group-item">
+                <%= food.title %>  
+                <small class="text-right"><%= number_to_human(food.weight, units: {unit: "g", thousand: "kg"}) %></small>
+                <span class="badge"><%= number_to_currency food.price %></span>
+              </li>
+            <% end %>
+          <% else %>
+            <h4>No results</h4>
+          <% end %>
+        </div>
+
+        <div id="appliances" class="tab-pane fade">
+          <% unless @appliances.blank? %>
+            <% @appliances.each do |appliance| %>
+              <li class="list-group-item">
+                <%= appliance.title %>  
+                <small class="text-right"><%= number_to_human(appliance.weight, units: {unit: "g", thousand: "kg"}) %></small>
+                <span class="badge"><%= number_to_currency appliance.price %></span>
+              </li>
+            <% end %>
+          <% else %>
+            <h4>No results</h4>
+          <% end %>
+        </div>
+
+      </div>
+    </ul>
+  </div>
+</div>

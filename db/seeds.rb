@@ -46,3 +46,51 @@ Movie.create([
   { title: "Ace Ventura 2", company: "Universal", price: 6.55, runtime: 98 },
   { title: "Night On Earth", company: "Miramax", price: 7.99, runtime: 120 }
 ])
+
+Food.delete_all
+Food.create([
+  { title: "Potato", weight: 70, price: 2.00 },
+  { title: "Carrot", weight: 65, price: 1.10 },
+  { title: "Cheese", weight: 100, price: 3.50 },
+  { title: "Butter", weight: 100, price: 2.45 },
+  { title: "Bread", weight: 150, price: 1.99 },
+  { title: "Cucumber", weight: 50, price: 0.45 },
+  { title: "Tomato", weight: 60, price: 0.50 },
+  { title: "Flour", weight: 500, price: 3.00 },
+  { title: "Egg", weight: 40, price: 0.35 },
+  { title: "Bacon", weight: 400, price: 8.00 },
+  { title: "Beef", weight: 400, price: 9.99 },
+  { title: "Veal", weight: 300, price: 8.50 },
+  { title: "Milk", weight: 900, price: 6.55 },
+  { title: "Oil", weight: 500, price: 6.10 },
+  { title: "Nut", weight: 100, price: 5.55 },
+  { title: "Sauce", weight: 50, price: 4.00 },
+  { title: "Sausage", weight: 200, price: 7.99 },
+  { title: "Pepper", weight: 20, price: 2.00 },
+  { title: "Apple", weight: 70, price: 2.50 },
+  { title: "Corn", weight: 90, price: 1.55 }
+])
+
+Appliance.delete_all
+Appliance.create([
+  { make: "China", title: "Vacuum cleaner", weight: 2070, price: 52.00 },
+  { make: "Japan", title: "Washer", weight: 15465, price: 101.10 },
+  { make: "USA", title: "Kettle", weight: 1100, price: 33.50 },
+  { make: "China", title: "TV", weight: 11100, price: 672.45 },
+  { make: "USA", title: "Laptop", weight: 3150, price: 361.99 },
+  { make: "Japan", title: "Table lamp", weight: 850, price: 10.45 },
+  { make: "China", title: "Fan", weight: 3460, price: 10.50 },
+  { make: "USA", title: "Fridge", weight: 20500, price: 83.00 },
+  { make: "Germany", title: "Dishwasher", weight: 10040, price: 110.35 },
+  { make: "China", title: "Record player", weight: 3400, price: 68.00 },
+  { make: "China", title: "Loudspeakers", weight: 400, price: 49.99 },
+  { make: "Germany", title: "Blender", weight: 2300, price: 18.50 },
+  { make: "Japan", title: "Drill", weight: 9900, price: 226.55 },
+  { make: "USA", title: "Chainsaw", weight: 8500, price: 226.10 },
+  { make: "Germany", title: "Air conditioning", weight: 9100, price: 435.55 },
+  { make: "China", title: "Hairdryer", weight: 850, price: 14.00 },
+  { make: "Japan", title: "Telephone", weight: 1200, price: 57.99 },
+  { make: "China", title: "Router", weight: 420, price: 12.00 },
+  { make: "Germany", title: "Juicer", weight: 1170, price: 22.50 },
+  { make: "Japan", title: "Microwave", weight: 5390, price: 51.55 }
+])
